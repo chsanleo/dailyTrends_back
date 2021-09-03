@@ -1,0 +1,19 @@
+{
+  "name": "dailytrends_back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chsanleo/dailyTrends_back.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chsanleo/dailyTrends_back/issues"
+  },
+  "homepage": "https://github.com/chsanleo/dailyTrends_back#readme"
+}
