@@ -1,4 +1,4 @@
-interface Feed {
+export type Feed = {
     title: string,
     link: string,
     originUrl: string,
