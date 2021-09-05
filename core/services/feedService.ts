@@ -8,6 +8,6 @@ export const create = async (newFeed: Feed): Promise<Feed> => {
     feed.dateCreated = utils.dateNowSQL();
     feed.origin = 'manually added';
 
-    feedRepository.create(feed);
+    await feedRepository.create(feed);
     return feed;
 };
