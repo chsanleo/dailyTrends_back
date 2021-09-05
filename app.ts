@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-
 import * as dotenv from 'dotenv';
+import { logger } from './config/config_log';
 
 dotenv.config();
 
