@@ -9,6 +9,12 @@ const dbconnect = require('./core/database/config/config.ts');
 dbconnect();
 //#endregion
 
+const app = express();
+//#region router
+import { manualImportRouter } from './routers/manualInputRouter';
+
+app.use('/importFeed', manualImportRouter);
+//#endregion
 app.listen(port, () => {
     console.log(`Running on port ${port}.`);
 });
