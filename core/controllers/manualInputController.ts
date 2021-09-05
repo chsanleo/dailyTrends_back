@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { Feed } from '../types/Feed';
 import * as feedService from '../services/feedService';
+import { logger } from '../../config/config_log';
 
 export const create = async (req: Request, res: Response) => {
     try {
@@ -9,6 +10,7 @@ export const create = async (req: Request, res: Response) => {
 
         res.status(200).send(feedDB);
     } catch (e) {
-        res.status(500).send(e.message);
+        logger.error(e.message);
+        res.status(500).send({ message: 'There was an error. Contact with the administrator.' });
     }
 };
