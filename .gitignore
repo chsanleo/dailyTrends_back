@@ -3,7 +3,7 @@ node_modules/
 dist/
 
 # Config Files
-config/config.js
+.env
 
 # Log files
 *.log

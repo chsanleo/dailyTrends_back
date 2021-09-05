@@ -9,4 +9,4 @@ const schema = new Schema<Feed>({
     dateCreated: { type: String, required: true },
 });
 
-const FeedModel = model<Feed>('Feed', schema);
+export const FeedModel = model<Feed>('Feed', schema);
