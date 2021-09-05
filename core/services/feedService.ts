@@ -12,6 +12,11 @@ export const create = async (newFeed: Feed): Promise<Feed> => {
     await feedRepository.create(feed);
     return feed;
 };
+export const get = async (id: string): Promise<Feed> => {
+    validations.isValidMongoId(id);
+    let feed: Feed = await feedRepository.get(id);
+    return feed;
+};
 export const getAll = async (): Promise<Feed[]> => {
     let feedList: Feed[] = [];
 
