@@ -11,3 +11,9 @@ export const create = async (newFeed: Feed): Promise<Feed> => {
     await feedRepository.create(feed);
     return feed;
 };
+export const getAll = async (): Promise<Feed[]> => {
+    let feedList: Feed[] = [];
+
+    feedList = feedList.concat(await feedRepository.getAll());
+    return feedList;
+};
