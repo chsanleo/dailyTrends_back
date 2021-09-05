@@ -17,3 +17,7 @@ export const getAll = async (): Promise<Feed[]> => {
     feedList = feedList.concat(await feedRepository.getAll());
     return feedList;
 };
+export const getAllDB = async (): Promise<Feed[]> => {
+    let feedList: Feed[] = await feedRepository.getAll();
+    return feedList;
+};
