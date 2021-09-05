@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 
 import * as dotenv from 'dotenv';
-const port = process.env.PORT || config.PORT;
 
 dotenv.config();
 
@@ -17,6 +16,7 @@ dbconnect();
 
 const app = express();
 
+app.use(cors());
 //#region router
 import { manualImportRouter } from './routers/manualInputRouter';
 
