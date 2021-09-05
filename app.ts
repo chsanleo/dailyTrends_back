@@ -22,8 +22,10 @@ app.use(express.json());
 
 //#region router
 import { manualImportRouter } from './routers/manualInputRouter';
+import { feedRouter } from './routers/feedRouter';
 
 app.use('/importFeed', manualImportRouter);
+app.use('/feed', feedRouter);
 //#endregion
 
 
