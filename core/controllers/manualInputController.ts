@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { Feed } from '../types/Feed';
 import * as feedService from '../services/feedService';
+import { logger } from '../../config/config_log';
 
 export const create = async (req: Request, res: Response) => {
     try {
