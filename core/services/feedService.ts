@@ -1,5 +1,6 @@
 import * as feedRepository from '../respositories/feedRespository';
 import * as utils from '../utils/utils';
+import * as validations from '../utils/validations';
 import { Feed } from '../types/Feed';
 
 export const create = async (newFeed: Feed): Promise<Feed> => {
