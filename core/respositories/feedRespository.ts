@@ -9,3 +9,7 @@ export const get = async (id: string): Promise<Feed> => {
     let feed = await FeedModel.findById(id);
     return feed;
 };
+export const getAll = async (): Promise<Feed[]> => {
+    let feedList = await FeedModel.find();
+    return feedList;
+};
