@@ -12,10 +12,10 @@ function logToTransportDebug(logObject: ILogObject) {
 };
 
 function dataFormat(logObject: ILogObject): string {
-    return '[date: ' + logObject.date + '], ' +
-        'logLevel: ' + logObject.logLevel + ', ' +
-        'message: ' + logObject.argumentsArray + ', ' +
-        'fileName: ' + logObject.fileName + ', ' +
+    return '[date: ' + logObject.date + '] -- ' +
+        'logLevel: ' + logObject.logLevel + ' -- ' +
+        'message: ' + logObject.argumentsArray + ' -- ' +
+        'fileName: ' + logObject.fileName + ' -- ' +
         'lineNumber: ' + logObject.lineNumber;
 };
 
