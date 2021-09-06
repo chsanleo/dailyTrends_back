@@ -70,6 +70,96 @@ Also we can call the API directly from others develops.
 
 Using the methods inside we can get information about the trends.
 
++ EndPoint to get a **unic** feed by id from the **database**
+
+``bash
+POST    http://url/feed/id:id1234556
+```
+
+i.e.
+```json
+HeadersRequest: 
+    
+BodyRequest:  { }
+
+Response: 
+   202 OK 
+    {
+      "_id": "id1234556"
+      "title": "tile important new",
+      "link": "http://www.link.es/new234",
+      "originUrl": "http://www.link.es/",
+      "origin": "manual",
+      "dateCreated": "2021-09-06 00:00:00"
+    }
+
+   500 { } 
+```
+
++ EndPoint to get **all** the feeds.
+
+``bash
+POST    http://url/feed/
+```
+
+i.e.
+```json
+HeadersRequest: 
+    
+BodyRequest:  { }
+
+Response: 
+   202 OK 
+   [
+      {
+        "_id": "id1234556"
+        "title": "tile important new",
+        "link": "http://www.link.es/new234",
+        "originUrl": "http://www.link.es/",
+        "origin": "manual",
+        "dateCreated": "2021-09-06 00:00:00"
+      },
+      {
+        "title": "tile important new",
+        "link": "http://www.mundo.es/new234",
+        "originUrl": "http://www.mundo.es/",
+        "origin": "manual",
+        "dateCreated": "2021-09-06 00:00:00"
+      },
+      ...
+    ]
+
+   500 { } 
+```
+
++ EndPoint to get **all** the feeds in the **database**
+
+``bash
+POST    http://url/feed/db
+```
+
+i.e.
+```json
+HeadersRequest: 
+    
+BodyRequest:  { }
+
+Response: 
+   202 OK 
+   [
+      {
+        "_id": "id1234556"
+        "title": "tile important new",
+        "link": "http://www.link.es/new234",
+        "originUrl": "http://www.link.es/",
+        "origin": "manual",
+        "dateCreated": "2021-09-06 00:00:00"
+      },
+      ...
+    ]
+
+   500 { } 
+```
 
 ### 📌 manualInputController
 
@@ -109,7 +199,6 @@ Response:
 
    500 { } 
 ```
-
 
 
 ## 📋 RoadMap 
