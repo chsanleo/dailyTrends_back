@@ -24,7 +24,14 @@ export const get = async (id: string): Promise<Feed> => {
 export const getAll = async (): Promise<Feed[]> => {
     let feedList: Feed[] = await dataScrapingPAISService.scrapeData();
     feedList = feedList.concat(await dataScrapingMUNDOService.scrapeData());
-    feedList = feedList.concat(await feedRepository.getAll());
+
+    let feedListDB : Feed[] = [];
+    for( let feedDB of await feedRepository.getAll()){
+        if(feedDB.dateCreated.includes(utils.simpleDateNowSQL())){
+            feedListDB.push(feedDB);
+        }
+    }
+    feedList = feedList.concat(feedListDB);
     return feedList;
 };
 export const getAllDB = async (): Promise<Feed[]> => {
