@@ -1,5 +1,7 @@
+import { ObjectId } from "mongoose";
+
 export type Feed = {
-    _id?:string,
+    _id?: ObjectId,
     title: string,
     link: string,
     originUrl: string,
