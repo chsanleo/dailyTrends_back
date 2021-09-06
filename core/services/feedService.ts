@@ -1,7 +1,11 @@
-import * as feedRepository from '../respositories/feedRespository';
 import * as utils from '../utils/utils';
 import * as validations from '../utils/validations';
+
 import { Feed } from '../types/Feed';
+
+import * as feedRepository from '../respositories/feedRespository';
+import * as dataScrapingPAISService from './dataScrapingPAISService';
+import * as dataScrapingMUNDOService from './dataScrapingMUNDOService';
 
 export const create = async (newFeed: Feed): Promise<Feed> => {
     let feed: Feed = newFeed;
@@ -18,8 +22,8 @@ export const get = async (id: string): Promise<Feed> => {
     return feed;
 };
 export const getAll = async (): Promise<Feed[]> => {
-    let feedList: Feed[] = [];
-
+    let feedList: Feed[] = await dataScrapingPAISService.scrapeData();
+    feedList = feedList.concat(await dataScrapingMUNDOService.scrapeData());
     feedList = feedList.concat(await feedRepository.getAll());
     return feedList;
 };
