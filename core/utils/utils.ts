@@ -4,3 +4,6 @@ export const dateNowSQL = (): string => {
 export const isNullOrEmpty = (variable): boolean => {
     return (variable == null || variable === '' || variable === ' ' || variable === undefined);
 };
+export const simpleDateNowSQL = (): string => {
+    return dateNowSQL().substring(0, 10);
+};
