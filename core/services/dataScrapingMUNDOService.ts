@@ -21,13 +21,12 @@ export const scrapeData = async (): Promise<Feed[]> => {
             
             let link: string = ($(el).attr("href"));
 
-            let fullDate: string = utils.dateNowSQL();
-            let today: string = fullDate.substring(0, 10).replace(/-/g,'/');
+            let today: string = utils.simpleDateNowSQL().replace(/-/g,'/');
 
             if (link.includes(today)) {
                 let feed: Feed = {
                     title: $(el).text(),
-                    dateCreated: fullDate,
+                    dateCreated:  utils.dateNowSQL(),
                     link: link,
                     originUrl: url,
                     origin: 'auto'
