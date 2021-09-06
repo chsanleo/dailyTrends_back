@@ -75,6 +75,43 @@ Using the methods inside we can get information about the trends.
 
 Using the methods inside we can process manually the information about the trends.
 
++ EndPoint to create manually a feed
+
+``bash
+POST    http://url/importFeed/create
+```
+
+i.e.
+```json
+HeadersRequest: 
+    
+BodyRequest:  
+    { "feed":
+        {
+           "title": string,
+           "link": string,
+           "originUrl": string,
+           "origin": string,
+           "dateCreated": string
+        }
+    }
+
+Response: 
+   202 OK 
+   {
+      "_id": "id1234556"
+      "title": "tile important new",
+      "link": "http://www.link.es/new234",
+      "originUrl": "http://www.link.es/",
+      "origin": "manual",
+      "dateCreated": "2021-09-06 00:00:00"
+    }
+
+   500 { } 
+```
+
+
+
 ## 📋 RoadMap 
 
 - [ ] Create a key to give access or not to the different methods.
