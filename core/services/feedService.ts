@@ -23,6 +23,7 @@ export const get = async (id: string): Promise<Feed> => {
 };
 export const getAll = async (): Promise<Feed[]> => {
     let feedList: Feed[] = await dataScrapingPAISService.scrapeData();
+    feedList = feedList.concat(await dataScrapingMUNDOService.scrapeData());
     feedList = feedList.concat(await feedRepository.getAll());
     return feedList;
 };
