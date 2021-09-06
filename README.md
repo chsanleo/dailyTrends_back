@@ -73,7 +73,7 @@ Using the methods inside we can get information about the trends.
 + EndPoint to get a **unic** feed by id from the **database**
 
 ``bash
-POST    http://url/feed/id:id1234556
+POST    http://url/feed/id1234556
 ```
 
 i.e.
